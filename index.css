@@ -1,0 +1,217 @@
+/*
+* @Author: SongH
+* @Date:   2017-11-07 16:37:57
+* @Last Modified by:   SongH
+* @Last Modified time: 2017-11-08 15:43:27
+*/
+@charset "utf-8";
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,legend,button
+form,fieldset,input,textarea,p,blockquote,th,td {
+　　padding: 0;
+	margin: 0;
+}
+html{
+	text-align: center;
+}
+body{
+	/* position: relative; */
+	display: inline-block;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	background-color: #F1F1F1;
+	font-family: "微软雅黑";
+	color: #363636;
+	font-size: 1rem;
+	max-width: 900px;
+}
+img{
+	width: 90%;
+}
+ul>li{
+	list-style: none;
+}
+@media screen and (min-width: 320px)and (max-width: 600px) { /*当屏幕尺寸小于600px时，应用下面的CSS样式*/
+	html{
+		font-size: 16px;
+	}
+}
+@media screen and (min-width: 601px) and(max-width: 800px){ /*当屏幕尺寸大于600px时，应用下面的CSS样式*/
+	html{
+		font-size: 20px;
+	}
+
+}
+@media screen and (min-width:801px) and (max-width:1920px) {
+    html{
+		font-size: 24px;
+	}
+}
+.content-footer{
+	text-align: center;
+	/* position: absolute; */
+	/* bottom: 2rem; */
+	width: 100%;
+	background-color: #fff;
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}
+.content-footer button{
+	background-color: #007AFF;
+	border: none;
+	min-height: 40px;
+	width: 80%;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	border-radius:4px;
+}
+.box{
+	/* margin-top: 1rem; */
+	background-color: #fff;
+	padding-top: 1rem;
+}
+.box-header{
+	font-size: 1.2rem;
+	padding: 0.5rem 0 0.5rem 0.6rem;
+}
+.box-footer{
+	padding-right: 0.5rem;
+	padding-left: 0.5rem;
+}
+.box-footer>ul{
+	padding: 0.3rem;
+}
+.box-footer>ul>li>span{
+	padding: 0.3rem;
+}
+.pull-left{
+	float: left;
+}
+.pull-right{
+	float: right;
+}
+.text-left{
+	text-align: left;
+}
+.text-right{
+	text-align: right;
+}
+.text-center{
+	text-align: center;
+}
+.clear-float{
+	clear: both;
+}
+.content-header{
+	width: 100%;
+	height: 3rem;
+	line-height: 3rem;
+	/* padding: 0 1rem 0rem 1rem; */
+	background-color: #fff;
+	margin: 0.5rem 0 1rem 0;
+	/* border: 1px solid #fff; */
+}
+.content-header>span{
+	font-size: 1.5rem;
+	padding-left: 0.7rem;
+}
+.white{
+	color: #fff;
+}
+.bg-white{
+	background-color: #fff;
+}
+.audio>audio{
+	/* width: 100%; */
+	/* height: rem; */
+}
+
+/* 音频样式 */
+.audio-wrapper {
+    background-color: #fcfcfc;
+    margin: 10px auto;
+    width: 90%;
+    max-width: 670px;
+    height: 70px;
+    border: 1px solid #e0e0e0;
+}
+
+.audio-left {
+    float: left;
+    text-align: center;
+    width: 18%;
+    height: 100%;
+}
+
+.audio-left img {
+    width: 40px;
+    position: relative;
+    top: 15px;
+    margin: 0;
+    display: initial;   /* 解除与app的样式冲突 */
+    cursor: pointer;
+}
+
+.audio-right {
+    margin-right: 2%;
+    float: right;
+    width: 80%;
+    height: 100%;
+}
+
+.audio-right p {
+    font-size: 15px;
+    height: 35%;
+    margin: 8px 0;
+
+    /* 歌曲名称只显示在一行，超出部分显示为省略号 */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 243px;   /* 要适配小屏幕手机，所以最大宽度先设小一点，后面js根据屏幕大小重新设置 */    
+}
+
+.progress-bar-bg {
+    background-color: #d9d9d9;
+    position: relative;
+    height: 2px;
+    cursor: pointer;
+}
+
+.progress-bar {
+    background-color: #649fec;
+    width: 0;
+    height: 2px;
+}
+
+.progress-bar-bg span {
+    content: " ";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    background-color: #3e87e8;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -5px;
+    margin-left: -5px;
+    cursor: pointer;
+}
+
+.audio-time {
+    overflow: hidden;
+    margin-top: -1px;
+}
+
+.audio-length-total {
+    float: right;
+    font-size: 12px;
+}
+
+.audio-length-current {
+    float: left;
+    font-size: 12px;
+}

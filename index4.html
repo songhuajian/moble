@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title></title>
+        <link href="bootstrap.css" rel="stylesheet">
+        <link href="font-awesome.css" rel="stylesheet">
+        <style>
+            #editor {
+                resize:vertical;
+                overflow:auto;
+                border:1px solid silver;
+                border-radius:5px;
+                min-height:100px;
+                box-shadow: inset 0 0 10px silver;
+                padding:1em;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="content">
+            <div class="container-fluid">
+                <div id='pad-wrapper'>
+                    <div id="editparent">
+                        <div id='editControls' class='span12' style='text-align:center; padding:5px;'>
+                            <div class='btn-group'>
+                                <a class='btn' data-role='undo' href='javascript:void(0)'><i class='icon-undo'></i></a>
+                                <a class='btn' data-role='redo' href='javascript:void(0)'><i class='icon-repeat'></i></a>
+                            </div>
+                            <div class='btn-group'>
+                                <a class='btn' data-role='bold' href='javascript:void(0)'><b>Bold</b></a>
+                                <a class='btn' data-role='italic' href='javascript:void(0)'><em>Italic</em></a>
+                                <a class='btn' data-role='underline' href='javascript:void(0)'><u><b>U</b></u></a>
+                                <a class='btn' data-role='strikeThrough' href='javascript:void(0)'><strike>abc</strike></a>
+                            </div>
+                            <div class='btn-group'>
+                                <a class='btn' data-role='justifyLeft' href='javascript:void(0)'><i class='icon-align-left'></i></a>
+                                <a class='btn' data-role='justifyCenter' href='javascript:void(0)'><i class='icon-align-center'></i></a>
+                                <a class='btn' data-role='justifyRight' href='javascript:void(0)'><i class='icon-align-right'></i></a>
+                                <a class='btn' data-role='justifyFull' href='javascript:void(0)'><i class='icon-align-justify'></i></a>
+                            </div>
+                            <div class='btn-group'>
+                                <a class='btn' data-role='indent' href='javascript:void(0)'><i class='icon-indent-right'></i></a>
+                                <a class='btn' data-role='outdent' href='javascript:void(0)'><i class='icon-indent-left'></i></a>
+                            </div>
+                            <div class='btn-group'>
+                                <a class='btn' data-role='insertUnorderedList' href='javascript:void(0)'><i class='icon-list-ul'></i></a>
+                                <a class='btn' data-role='insertOrderedList' href='javascript:void(0)'><i class='icon-list-ol'></i></a>
+                            </div>
+                            <div class='btn-group'>
+                                <a class='btn' data-role='h1' href='javascript:void(0)'>h<sup>1</sup></a>
+                                <a class='btn' data-role='h2' href='javascript:void(0)'>h<sup>2</sup></a>
+                                <a class='btn' data-role='p' href='javascript:void(0)'>p</a>
+                            </div>
+                            <div class='btn-group'>
+                                <a class='btn' data-role='subscript' href='javascript:void(0)'><i class='icon-subscript'></i></a>
+                                <a class='btn' data-role='superscript' href='javascript:void(0)'><i class='icon-superscript'></i></a>
+                            </div>
+                        </div>
+                        <div id='editor' class='span12' style='' contenteditable>
+                            <h1>请输入标题</h1>
+                            <ul>
+                                <li>请输入列表</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="jquery.min.js"></script>
+        <script src="bootstrap.min.js"></script>
+        <script>
+ 
+            $(function() {
+                $('#editControls a').click(function(e) {
+                    switch($(this).data('role')) {
+                        case 'h1':
+                        case 'h2':
+                        case 'p':
+                            document.execCommand('formatBlock', false, '<' + $(this).data('role') + '>');
+                            break;
+                        default:
+                            document.execCommand($(this).data('role'), false, null);
+                            break;
+                    }
+                })
+            });
+        </script>
+    </body>
+</html>
